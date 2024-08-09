@@ -165,5 +165,7 @@ namespace _3K1DMidTest.Controllers
         {
             return _context.Sales.Any(e => e.Id == id);
         }
+       
+
     }
 }
