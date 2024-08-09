@@ -1,0 +1,42 @@
+﻿@model IEnumerable<_3K1DMidTest.Models.Sale>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh Sách Khách Hàng Đã Mua Xe</h1>
+
+
+<table class="table table-bordered" style="border: 1px solid #000; border-radius: 10px;">
+    <thead>
+        <tr>
+            <th>Mã KH</th>
+            <th>Tên khách hàng</th>
+            <th>Ngày sinh</th>
+            <th>Nhãn hiệu</th>
+            <th>Model</th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.BirthDate)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Car.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Model)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
