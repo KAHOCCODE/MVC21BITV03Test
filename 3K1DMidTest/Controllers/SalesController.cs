@@ -21,9 +21,14 @@ namespace _3K1DMidTest.Controllers
         // GET: Sales
         public async Task<IActionResult> Index()
         {
-            var carDealerContext = _context.Sales.Include(s => s.Car).Include(s => s.Customer);
+            var carDealerContext = _context.Sales
+                                            .Include(s => s.Car)
+                                            .Include(s => s.Customer)
+                                            .OrderBy(s => s.Customer.Id); // Sắp xếp theo Mã KH
+
             return View(await carDealerContext.ToListAsync());
         }
+
 
         // GET: Sales/Details/5
         public async Task<IActionResult> Details(int? id)
