@@ -17,7 +17,7 @@ public partial class Sale
 
     public virtual Customer? Customer { get; set; }
 
-    //dùng Carid truy vấn ra model và make trong Car
+
     public string CarMake
     {
         get
@@ -40,7 +40,7 @@ public partial class Sale
             return string.Empty;
         }
     }
-    //dùng CustomerId truy vấn ra name và birthdate trong Customer
+
     public string CustomerName
     {
         get
